@@ -23,7 +23,7 @@
         android:theme="@style/Theme.LocusAssighment"
         tools:targetApi="31">
         <activity
-            android:name="com.lkb.locusassignment.MainActivity"
+            android:name="com.lkb.locusassignment.view.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

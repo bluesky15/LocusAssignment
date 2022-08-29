@@ -1,4 +1,4 @@
-package com.lkb.locusassignment
+package com.lkb.locusassignment.view.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 

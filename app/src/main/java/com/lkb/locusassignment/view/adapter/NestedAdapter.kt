@@ -1,11 +1,14 @@
-package com.lkb.locusassignment
+package com.lkb.locusassignment.view.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.RadioButton
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.RecyclerView
+import com.lkb.locusassignment.data.PageItem
+import com.lkb.locusassignment.R
 import com.lkb.locusassignment.databinding.CommentsLayoutBinding
 import com.lkb.locusassignment.databinding.PhotoPickerBinding
 import com.lkb.locusassignment.databinding.SingleChoiceLayoutBinding
@@ -74,6 +77,9 @@ class NestedAdapter(items: List<PageItem>, private val itemClickListener: (PageI
     ) : RecyclerView.ViewHolder(binding.root), ItemViewHolder<PageItem> {
         override fun bind(item: PageItem, position: Int) {
             with(item) {
+                binding.etComments.addTextChangedListener {
+                    item.comment = it.toString()
+                }
                 binding.tvTitleLabel.text = title
                 binding.toggleButton.setOnCheckedChangeListener { buttonView, isChecked ->
                     if (isChecked) {
